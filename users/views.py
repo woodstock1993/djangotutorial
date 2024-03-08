@@ -26,7 +26,7 @@ def register_user(request):
 class RegisterAPI(generics.GenericAPIView):
     serializer_class = UserSerializer    
 
-    def post(self, request, *args, **kwargs):        
+    def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()

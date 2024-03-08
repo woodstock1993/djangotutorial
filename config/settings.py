@@ -36,10 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',    
     'rest_framework',
     'rest_framework.authtoken',
     'users',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -129,8 +130,5 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-    # Other settings...
+    "DEFAULT_PERMISSION_CLASSES": ('rest_framework.permissions.AllowAny',),
 }
